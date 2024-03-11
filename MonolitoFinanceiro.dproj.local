@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/03/01 22:02:42.000.008,=C:\Users\João Pedro\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/03/01 22:04:44.000.397,C:\Users\João Pedro\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\src\View\MonolitoFinanceiro.View.Principal.pas</Transaction>
+    <Transaction>2024/03/01 22:04:44.000.397,C:\Users\João Pedro\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\src\View\MonolitoFinanceiro.View.Principal.dfm</Transaction>
+    <Transaction>2024/03/01 22:05:07.000.533,C:\Users\João Pedro\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\MonolitoFinanceiro.dproj</Transaction>
+    <Transaction>2024/03/02 13:58:13.000.186,=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2024/03/02 13:58:53.000.917,C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\src\View\MonolitoFinanceiro.View.CadastroPadrao.dfm=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\Unit1.dfm</Transaction>
+    <Transaction>2024/03/02 13:58:53.000.917,C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\src\View\MonolitoFinanceiro.View.CadastroPadrao.pas=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2024/03/02 16:43:22.000.921,=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2024/03/02 16:43:40.000.991,C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\src\View\MonolitoFinanceiro.View.Splash.dfm=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\Unit1.dfm</Transaction>
+    <Transaction>2024/03/02 16:43:40.000.991,C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\src\View\MonolitoFinanceiro.View.Splash.pas=C:\Users\João Pedro\Documents\Projetos Delphi\MonolitoFinanceiro\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

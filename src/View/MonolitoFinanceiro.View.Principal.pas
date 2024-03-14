@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, MonolitoFinanceiro.Model.Conexao;
 
 type
   TfrmPrincipal = class(TForm)
@@ -12,8 +12,8 @@ type
     mnuCadastro: TMenuItem;
     mnuRelatorios: TMenuItem;
     mnuAjuda: TMenuItem;
-    mnuCadastroPadrao: TMenuItem;
-    procedure mnuCadastroPadraoClick(Sender: TObject);
+    mnuUsuarios: TMenuItem;
+    procedure mnuUsuariosClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -28,7 +28,7 @@ implementation
 
 {$R *.dfm}
 
-uses MonolitoFinanceiro.View.CadastroPadrao, MonolitoFinanceiro.View.Splash;
+uses MonolitoFinanceiro.View.Usuarios, MonolitoFinanceiro.View.Splash;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
@@ -40,9 +40,9 @@ begin
   end;
 end;
 
-procedure TfrmPrincipal.mnuCadastroPadraoClick(Sender: TObject);
+procedure TfrmPrincipal.mnuUsuariosClick(Sender: TObject);
 begin
-  frmCadastroPadrao.Show;
+  frmUsuarios.Show;
 end;
 
 end.

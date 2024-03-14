@@ -1,0 +1,16 @@
+object dmConexao: TdmConexao
+  OnCreate = DataModuleCreate
+  Height = 480
+  Width = 640
+  object sqlConexao: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Jo'#227'o Pedro\Documents\Projetos Delphi\MonolitoF' +
+        'inanceiro\db\SistemaFinanceiro'
+      'DriverID=SQLite')
+    Connected = True
+    LoginPrompt = False
+    Left = 88
+    Top = 40
+  end
+end

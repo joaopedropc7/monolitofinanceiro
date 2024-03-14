@@ -18,9 +18,9 @@ object frmPrincipal: TfrmPrincipal
   object MainMenu1: TMainMenu
     object mnuCadastro: TMenuItem
       Caption = 'Cadastros'
-      object mnuCadastroPadrao: TMenuItem
-        Caption = 'Cadastro padr'#227'o'
-        OnClick = mnuCadastroPadraoClick
+      object mnuUsuarios: TMenuItem
+        Caption = 'Usu'#225'rios'
+        OnClick = mnuUsuariosClick
       end
     end
     object mnuRelatorios: TMenuItem

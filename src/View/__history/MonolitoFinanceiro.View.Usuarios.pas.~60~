@@ -1,0 +1,117 @@
+unit MonolitoFinanceiro.View.Usuarios;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, MonolitoFinanceiro.View.CadastroPadrao,
+  Data.DB, System.ImageList, Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
+  Vcl.ExtCtrls, Vcl.WinXPanels, MonolitoFinanceiro.Model.Usuarios,
+  Vcl.WinXCtrls;
+
+type
+  TfrmUsuarios = class(TfrmCadastroPadrao)
+    DataSource1: TDataSource;
+    edtNome: TEdit;
+    edtLogin: TEdit;
+    edtSenha: TEdit;
+    Label2: TLabel;
+    ToggleStatus: TToggleSwitch;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure btnAlterarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmUsuarios: TfrmUsuarios;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmUsuarios.btnAlterarClick(Sender: TObject);
+begin
+  inherited;
+  dmUsuarios.cdsUsuarios.Edit;
+  edtNome.Text := dmUsuarios.cdsUsuariosnome.AsString;
+  edtLogin.Text := dmUsuarios.cdsUsuarioslogin.AsString;
+  edtSenha.Text := dmUsuarios.cdsUsuariossenha.AsString;
+  ToggleStatus.State := tssOn;
+  if dmUsuarios.cdsUsuariosstatus.AsString = 'B' then
+    ToggleStatus.State := tssOff;
+end;
+
+procedure TfrmUsuarios.btnPesquisarClick(Sender: TObject);
+begin
+
+  var
+    textoPesquisa: String;
+  inherited;
+  textoPesquisa := edtPesquisar.Text;
+  dmUsuarios.cdsUsuarios.Close;
+  dmUsuarios.cdsUsuarios.CommandText :=
+    'SELECT * FROM Usuarios WHERE nome LIKE ''%' + textoPesquisa + '%''';
+  dmUsuarios.cdsUsuarios.Open;
+
+end;
+
+procedure TfrmUsuarios.btnSalvarClick(Sender: TObject);
+var
+  LStatus: String;
+begin
+
+  if Trim(edtNome.Text) = '' then
+  begin
+    edtNome.SetFocus;
+    Application.MessageBox('O campo nome não pode estar vazio!', 'Atenção',
+      MB_OK + MB_ICONWARNING);
+    abort;
+  end;
+  if Trim(edtLogin.Text) = '' then
+  begin
+    edtNome.SetFocus;
+    Application.MessageBox('O campo login não pode estar vazio!', 'Atenção',
+      MB_OK + MB_ICONWARNING);
+    abort;
+  end;
+  if Trim(edtSenha.Text) = '' then
+  begin
+    edtNome.SetFocus;
+    Application.MessageBox('O campo senha não pode estar vazio!', 'Atenção',
+      MB_OK + MB_ICONWARNING);
+    abort;
+  end;
+
+  LStatus := 'A';
+  if ToggleStatus.State = tssOff then
+    LStatus := 'B';
+
+  dmUsuarios.cdsUsuariosnome.AsString := Trim(edtNome.Text);
+  dmUsuarios.cdsUsuarioslogin.AsString := Trim(edtLogin.Text);
+  dmUsuarios.cdsUsuariossenha.AsString := Trim(edtSenha.Text);
+
+  dmUsuarios.cdsUsuarios.Post;
+  dmUsuarios.cdsUsuarios.ApplyUpdates(0);
+  Application.MessageBox('Registro alterado com sucesso', 'Atenção',
+    MB_OK + MB_ICONINFORMATION);
+
+  PnlPrincipal.ActiveCard := cardPesquisa;
+  inherited;
+end;
+
+procedure TfrmUsuarios.FormShow(Sender: TObject);
+begin
+  inherited;
+  PnlPrincipal.ActiveCard := cardPesquisa;
+end;
+
+end.

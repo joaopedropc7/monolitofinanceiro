@@ -20,7 +20,7 @@ object frmCadastroPadrao: TfrmCadastroPadrao
     Width = 824
     Height = 505
     Align = alClient
-    ActiveCard = cardCadastro
+    ActiveCard = cardPesquisa
     Caption = 'PnlPrincipal'
     TabOrder = 0
     object cardCadastro: TCard
@@ -31,7 +31,6 @@ object frmCadastroPadrao: TfrmCadastroPadrao
       Caption = 'cardCadastro'
       CardIndex = 0
       TabOrder = 0
-      ExplicitLeft = 2
       object Panel1: TPanel
         Left = 0
         Top = 423
